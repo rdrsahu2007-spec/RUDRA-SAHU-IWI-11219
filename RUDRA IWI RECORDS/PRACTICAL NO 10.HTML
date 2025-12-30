@@ -1,0 +1,24 @@
+ <!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Practical 10 - div and span</title>
+<style>
+  .container { border:1px solid #ddd; padding:10px; }
+  .left { float:left; width:30%; }
+  .right { float:right; width:65%; }
+  .clear { clear: both; }
+  span.badge { background:#eee; padding:2px 6px; border-radius:4px; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="left"><img src="https://via.placeholder.com/150" alt="img"></div>
+    <div class="right">
+      <h2>Title <span class="badge">New</span></h2>
+      <p>Using div for layout and span for inline label.</p>
+    </div>
+    <div class="clear"></div>
+  </div>
+</body>
+</html>

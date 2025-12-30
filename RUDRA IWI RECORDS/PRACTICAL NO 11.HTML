@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Practical 11 - Arithmetic</title>
+</head>
+<body>
+  <h1>Simple Calculator</h1>
+  <input type="number" id="a" placeholder="Number 1">
+  <input type="number" id="b" placeholder="Number 2"><br><br>
+
+  <button onclick="calculate('+')">Add</button>
+  <button onclick="calculate('-')">Subtract</button>
+  <button onclick="calculate('*')">Multiply</button>
+  <button onclick="calculate('/')">Divide</button>
+
+  <p>Result: <span id="result">-</span></p>
+
+  <script>
+    function calculate(op) {
+      const a = parseFloat(document.getElementById('a').value) || 0;
+      const b = parseFloat(document.getElementById('b').value) || 0;
+      let res;
+      if (op === '+') res = a + b;
+      else if (op === '-') res = a - b;
+      else if (op === '*') res = a * b;
+      else if (op === '/') res = b === 0 ? 'Error: division by zero' : a / b;
+      document.getElementById('result').textContent = res;
+    }
+  </script>
+</body>
+</htm

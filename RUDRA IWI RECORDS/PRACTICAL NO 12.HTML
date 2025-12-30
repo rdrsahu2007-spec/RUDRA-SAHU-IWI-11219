@@ -1,0 +1,53 @@
+
+ <!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Practical 12 - Conditionals & Loops</title></head>
+<body>
+  <h1>Even/Odd Check</h1>
+  <input id="num" type="number" placeholder="Enter a number">
+  <button onclick="check()">Check</button>
+  <p id="out1"></p>
+
+  <h1>Loops</h1>
+  <button onclick="runLoops()">Run Loops</button>
+  <pre id="out2"></pre>
+
+  <script>
+    function check(){
+      const n = Number(document.getElementById('num').value);
+      // if-else
+      if (isNaN(n)) {
+        document.getElementById('out1').textContent = 'Enter a number';
+        return;
+      }
+      document.getElementById('out1').textContent = (n % 2 === 0) ? 'Even' : 'Odd';
+    }
+
+    function runLoops(){
+      let text = '';
+
+      // for loop
+      text += 'For 1..5:\\n';
+      for (let i=1;i<=5;i++) text += i + ' ';
+
+      // while loop
+      text += '\\n\\nWhile doubling until >20:\\n';
+      let x = 1;
+      while (x <= 20){
+        text += x + ' ';
+        x *= 2;
+      }
+
+      // do..while
+      text += '\\n\\nDo-While example (runs at least once):\\n';
+      let j = 0;
+      do {
+        text += j + ' ';
+        j++;
+      } while (j < 3);
+
+      document.getElementById('out2').textContent = text;
+    }
+  </script>
+</body>
+</html>

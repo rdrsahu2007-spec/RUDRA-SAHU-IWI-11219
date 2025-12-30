@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Practical 8 - CSS Selectors</title>
+<style>
+  /* universal */
+  * { box-sizing: border-box; }
+
+  /* tag selector */
+  p { font-size: 16px; }
+
+  /* class */
+  .highlight { color: red; }
+
+  /* id */
+  #main { padding: 10px; }
+
+  /* descendant */
+  #main .child { margin-left: 10px; }
+
+  /* group selector */
+  h1, h2 { font-family: Georgia, serif; }
+</style>
+</head>
+<body>
+  <div id="main">
+    <h1>Selectors Demo</h1>
+    <p class="highlight child">This paragraph uses class and descendant selectors.</p>
+  </div>
+  <p>Normal paragraph</p>
+</body>
+</html>

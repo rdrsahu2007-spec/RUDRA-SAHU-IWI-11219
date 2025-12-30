@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- Declares the document type and tells the browser this is HTML5 -->
+
+<html>
+<!-- Starts the HTML document -->
+
+<head>
+  <!-- Head section begins -->
+
+  <title>JavaScript Scope Demo</title>
+  <!-- Sets the title shown in browser tab -->
+
+</head>
+<!-- Head section ends -->
+
+<body>
+  <!-- Body section begins -->
+
+  <h2>var, let, const - Scope Demo</h2>
+  <!-- A heading shown on the page -->
+
+  <script>
+    // Start of JavaScript code block
+
+    // User-defined function declaration
+    function scopeDemo() {
+
+      // var variable (FUNCTION scoped)
+      var x = "var - function scope";
+
+      // let variable (BLOCK scoped)
+      let y = "let - block scope";
+
+      // const variable (BLOCK scoped and constant)
+      const z = "const - block scope";
+
+      // Print x in console
+      console.log(x);
+
+      // Print y in console
+      console.log(y);
+
+      // Print z in console
+      console.log(z);
+
+      // Start of block
+      if (true) {
+
+        // var inside block (still FUNCTION scoped)
+        var a = "var - accessible outside block";
+
+        // let inside block (BLOCK scoped)
+        let b = "let - accessible only inside block";
+
+        // const inside block (BLOCK scoped)
+        const c = "const - accessible only inside block";
+
+        // Print block variables
+        console.log(a);
+        console.log(b);
+        console.log(c);
+      }
+      // End of block
+
+      // a is accessible here because var is function scoped
+      console.log(a);
+
+      // b is NOT accessible here because let is block scoped
+      // console.log(b);   // ❌ Error
+
+      // c is NOT accessible here because const is block scoped
+      // console.log(c);   // ❌ Error
+    }
+
+    // Function call (invocation)
+    scopeDemo();
+
+  </script>
+  <!-- End of JavaScript code block -->
+
+</body>
+<!-- Body section ends -->
+
+</html>
+<!-- End of HTML document -->

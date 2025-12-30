@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Show Hide & Toggle Example</title>
+
+    <style>
+        /* Hide class */
+        .hidden {
+            display: none;
+        }
+
+        /* Style toggle class */
+        .highlight {
+            color: red;
+            font-size: 22px;
+            font-weight: bold;
+            background-color: yellow;
+            padding: 10px;
+        }
+
+        button {
+            margin: 5px;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Show / Hide using JavaScript</h2>
+
+    <button onclick="hideText()">Hide</button>
+    <button onclick="showText()">Show</button>
+    <p id="text">This text will hide and show</p>
+
+    <hr>
+
+    <h2>Toggle Show / Hide</h2>
+
+    <button onclick="toggleText()">Toggle Text</button>
+    <p id="toggleMsg">Toggle me using one button</p>
+
+    <hr>
+
+    <h2>Show / Hide using CSS Class</h2>
+
+    <button onclick="togglePara()">Toggle Paragraph</button>
+    <p id="para">This paragraph uses CSS class toggle</p>
+
+    <hr>
+
+    <h2>Toggle CSS Class (Style Change)</h2>
+
+    <button onclick="toggleStyle()">Toggle Style</button>
+    <p id="text2">My style will change</p>
+
+    <script>
+        // Show element
+        function showText() {
+            document.getElementById("text").style.display = "block";
+        }
+
+        // Hide element
+        function hideText() {
+            document.getElementById("text").style.display = "none";
+        }
+
+        // Toggle show/hide
+        function toggleText() {
+            let el = document.getElementById("toggleMsg");
+            if (el.style.display === "none") {
+                el.style.display = "block";
+            } else {
+                el.style.display = "none";
+            }
+        }
+
+        // Toggle using CSS class
+        function togglePara() {
+            document.getElementById("para").classList.toggle("hidden");
+        }
+
+        // Toggle style class
+        function toggleStyle() {
+            document.getElementById("text2").classList.toggle("highlight");
+        }
+    </script>
+
+</body>
+</html>

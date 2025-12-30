@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Validation Example</title>
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+<h2>Registration Form</h2>
+
+<form id="myForm" onsubmit="return validateForm(event)">
+    <label>Name:</label><br>
+    <input type="text" id="name" oninput="clearError('nameError')">
+    <div id="nameError" class="error"></div>
+    <br>
+
+    <label>Email:</label><br>
+    <input type="text" id="email" oninput="clearError('emailError')">
+    <div id="emailError" class="error"></div>
+    <br>
+
+    <button type="submit">Submit</button>
+</form>
+
+
+<script>
+function validateForm(event) {
+    let isValid = true;
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+
+    // Validate Name
+    if (name === "") {
+        document.getElementById("nameError").textContent = "Name is required.";
+        isValid = false;
+    }
+
+    // Validate Email
+    if (email === "") {
+        document.getElementById("emailError").textContent = "Email is required.";
+        isValid = false;
+    } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+        document.getElementById("emailError").textContent = "Enter a valid email.";
+        isValid = false;
+    }
+
+    // If invalid, show alert and stop submission
+    if (!isValid) {
+        alert("Please fix the errors before submitting.");
+        event.preventDefault();
+        return false;
+    }
+
+    alert("Form submitted successfully!");
+    return true;
+}
+
+// Clear error while typing
+function clearError(id) {
+    document.getElementById(id).textContent = "";
+}
+</script>
+
+</body>
+</html>
